@@ -1,9 +1,8 @@
 import json
 from os import listdir
 from os.path import getsize
-
+from os.path import isdir
 import docx
-
 from extract import DialogFlowAPI
 
 
@@ -38,7 +37,8 @@ class AddressParser:
             'получатель товара',
             'адрес грузополучателя',
             'грузополучатель',
-            'место выполнения'
+            'место выполнения',
+            'поставка товара осуществляется'
 
         ]
 
@@ -123,3 +123,12 @@ class AddressParser:
                         ...
                     addresses.append(adrs_txt)
         return addresses
+    def connect_with_tables(self, tables_dir: str = None):
+        orders = listdir(tables_dir)
+        for order in orders:
+            columns_names = [clmn for clmn in listdir(f'{tables_dir}/{order}') if not isdir(f'{tables_dir}/{order}/{clmn}')]
+            columns = [clmn for clmn in listdir(f'{tables_dir}/{order}') if isdir(f'{tables_dir}/{order}/{clmn}')]
+            print(columns)
+            print(columns_names)
+
+
