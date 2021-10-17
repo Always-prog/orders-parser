@@ -100,26 +100,6 @@ class AddressParser:
                     return {
                         value: ai_return.get(value) for value in self.AI_EXTRACT_VALUES
                     }
-                # for k_wd in self.SERVICE_KEYWORDS:
-                #     if k_wd in doc.paragraphs[index - 1].text:
-                #         text = doc.paragraphs[index - 1].text
-                #     elif k_wd in doc.paragraphs[index].text:
-                #         text = doc.paragraphs[index].text
-                #     elif k_wd in doc.paragraphs[index + 1].text:
-                #         text = doc.paragraphs[index + 1].text
-                #     if text:
-                #         if len(text) > 255:
-                #             cut = len(text) - 255
-                #             print('cut')
-                #             print('-',text)
-                #             text = text[cut:]
-                #             print('-', text)
-                #
-                #         ai_return = self.AI.extract(text)
-                #         return {
-                #             value: ai_return.get(value) for value in self.AI_EXTRACT_VALUES
-                #
-                #         }
 
     def get_all_addresses(self):
         addresses = []
