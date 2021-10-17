@@ -12,7 +12,7 @@ Repo for: https://tenderhack.ru/
 Using: 
 <code><br>
 python main.py [path to orders dir] [path to ai credentails] [path to json file for saving result (optional)]
-</code><br>
+</code><br><br>
 
 Example: 
 <code><br>
